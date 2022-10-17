@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  executor:
+    build: .
+    image: prometheus-am-executor
+    command: "prometheus-am-executor -f ./executor.yml"
+    volumes:
+      - ./executor.yml:/executor.yml
+    ports:
+      - 7091:7091
